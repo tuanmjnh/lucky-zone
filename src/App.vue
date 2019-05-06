@@ -1,28 +1,34 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <tpl-snackbar />
+    <div class="mid-center" v-if="$store.state.$loadingApp">
+      <v-progress-circular :size="130" :width="10" color="primary" indeterminate></v-progress-circular>
+    </div>
+    <template v-else>
+      <tpl-main />
+      <!-- <tpl-main v-if="$store.state.auth.isAuth"/> -->
+      <!-- <tpl-auth v-else/> -->
+    </template>
+    <!-- <tpl-test /> -->
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import snackbar from "./components/snackbar";
+import main from "./layouts/vuetify/main";
+// import test from './layouts/vuetify/test'
+import * as _store from "./plugins/storage";
 export default {
-  name: 'app',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    "tpl-snackbar": snackbar,
+    "tpl-main": main,
+    // 'tpl-test': test
+  },
+  // data: () => ({}),
+  beforeCreate() {},
+  computed: {}
+};
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
 </style>
