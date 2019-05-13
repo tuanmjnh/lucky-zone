@@ -206,7 +206,7 @@ export default {
     // rightDrawer: false,
     navContentLeft: [
       {
-        title: 'Tính toán',
+        title: 'Calculate',
         icon: 'apps',
         push: 'calculate'
       }
