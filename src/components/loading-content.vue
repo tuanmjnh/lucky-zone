@@ -8,11 +8,11 @@
 export default {
   props: {
     loading: { type: Boolean, default: true },
-    size: { type: Number, default: 130 },
+    size: { type: Number, default: 120 },
     width: { type: Number, default: 10 },
     timeout: { type: Number, default: 600 },
     color: { type: String, default: 'primary' },
-    classes: { type: String, default: 'mid-center' }
+    classes: { type: String, default: 'text-xs-center' }
   },
   data: () => ({
     // loading: true

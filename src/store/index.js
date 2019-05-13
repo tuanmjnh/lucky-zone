@@ -23,9 +23,7 @@ export default new Vuex.Store({
       statusText: ''
     }
   }, // State
-  getters: {
-    
-  }, // = computed properties
+  getters: {}, // = computed properties
   mutations: {
     SET_MESSAGE(state, res) {
       state.$message = {
@@ -58,7 +56,7 @@ export default new Vuex.Store({
       }
       state.$message.color = 'danger'
       state.$message.show = true
-    },
+    }
   }, // Mutations
   actions: {
     message({ commit }, data) {
